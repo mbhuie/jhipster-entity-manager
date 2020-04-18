@@ -1,0 +1,30 @@
+entity Index {
+    basketCurrency String
+    asAtDate LocalDate
+    basketInstrument String
+    basketInstrumentType String
+    basketMinorUnits BigDecimal
+    basketName String
+    basketRic String
+    basketType String 
+    family String
+    fundCurrency String
+    isEtf Boolean
+    isEtc Boolean
+}
+
+entity Constituent {
+	ric String
+    isin String
+    sedol String
+    currency String
+	issueType String
+    mic String
+    centerCode String
+    sharesOutstanding Long
+}
+
+relationship OneToMany {
+	Index to Constituent
+}
+
