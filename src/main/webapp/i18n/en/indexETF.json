@@ -1,0 +1,33 @@
+{
+  "entityManagerApp": {
+    "indexETF": {
+      "home": {
+        "title": "Index ETFS",
+        "createLabel": "Create a new Index ETF",
+        "createOrEditLabel": "Create or edit a Index ETF",
+        "notFound": "No Index ETFS found"
+      },
+      "created": "A new Index ETF is created with identifier {{ param }}",
+      "updated": "A Index ETF is updated with identifier {{ param }}",
+      "deleted": "A Index ETF is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Index ETF {{ id }}?"
+      },
+      "detail": {
+        "title": "Index ETF"
+      },
+      "basketCurrency": "Basket Currency",
+      "asAtDate": "As At Date",
+      "basketInstrument": "Basket Instrument",
+      "basketInstrumentType": "Basket Instrument Type",
+      "basketMinorUnits": "Basket Minor Units",
+      "basketName": "Basket Name",
+      "basketRic": "Basket Ric",
+      "basketType": "Basket Type",
+      "family": "Family",
+      "fundCurrency": "Fund Currency",
+      "isEtf": "Is Etf",
+      "isEtc": "Is Etc"
+    }
+  }
+}

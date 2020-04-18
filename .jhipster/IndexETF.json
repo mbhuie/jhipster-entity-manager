@@ -1,0 +1,65 @@
+{
+    "name": "IndexETF",
+    "fields": [
+        {
+            "fieldName": "basketCurrency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "asAtDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "basketInstrument",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "basketInstrumentType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "basketMinorUnits",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "basketName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "basketRic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "basketType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "family",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fundCurrency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isEtf",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isEtc",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200418131800",
+    "entityTableName": "index_etf",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

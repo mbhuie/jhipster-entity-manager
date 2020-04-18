@@ -1,0 +1,14 @@
+entity IndexETF {
+    basketCurrency String
+    asAtDate LocalDate
+    basketInstrument String
+    basketInstrumentType String
+    basketMinorUnits BigDecimal
+    basketName String
+    basketRic String
+    basketType String 
+    family String
+    fundCurrency String
+    isEtf Boolean
+    isEtc Boolean
+}
