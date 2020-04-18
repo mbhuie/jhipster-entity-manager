@@ -1,0 +1,24 @@
+{
+  "entityManagerApp": {
+    "exchange": {
+      "home": {
+        "title": "Exchanges",
+        "createLabel": "Maak een nieuwe Exchange",
+        "createOrEditLabel": "Maak of wijzig een Exchange",
+        "notFound": "No Exchanges found"
+      },
+      "created": "A new Exchange is created with identifier {{ param }}",
+      "updated": "A Exchange is updated with identifier {{ param }}",
+      "deleted": "A Exchange is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Exchange {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Exchange"
+      },
+      "mic": "Mic",
+      "name": "Name",
+      "mic": "Mic"
+    }
+  }
+}

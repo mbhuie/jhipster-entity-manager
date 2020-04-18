@@ -1,0 +1,25 @@
+{
+  "entityManagerApp": {
+    "stock": {
+      "home": {
+        "title": "Stocks",
+        "createLabel": "Maak een nieuwe Stock",
+        "createOrEditLabel": "Maak of wijzig een Stock",
+        "notFound": "No Stocks found"
+      },
+      "created": "A new Stock is created with identifier {{ param }}",
+      "updated": "A Stock is updated with identifier {{ param }}",
+      "deleted": "A Stock is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Stock {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Stock"
+      },
+      "ric": "Ric",
+      "name": "Name",
+      "mic": "Mic",
+      "lotSize": "Lot Size"
+    }
+  }
+}
