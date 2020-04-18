@@ -1,0 +1,81 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="entityManagerApp.constituent.home.title">Constituents</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-constituent" [routerLink]="['/constituent/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="entityManagerApp.constituent.home.createLabel">
+            Create a new Constituent
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="constituents?.length === 0">
+        <span jhiTranslate="entityManagerApp.constituent.home.notFound">No constituents found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="constituents?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.ric">Ric</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.isin">Isin</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.sedol">Sedol</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.currency">Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.issueType">Issue Type</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.mic">Mic</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.centerCode">Center Code</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.sharesOutstanding">Shares Outstanding</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.constituent.index">Index</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let constituent of constituents ;trackBy: trackId">
+                    <td><a [routerLink]="['/constituent', constituent.id, 'view']">{{ constituent.id }}</a></td>
+                    <td>{{ constituent.ric }}</td>
+                    <td>{{ constituent.isin }}</td>
+                    <td>{{ constituent.sedol }}</td>
+                    <td>{{ constituent.currency }}</td>
+                    <td>{{ constituent.issueType }}</td>
+                    <td>{{ constituent.mic }}</td>
+                    <td>{{ constituent.centerCode }}</td>
+                    <td>{{ constituent.sharesOutstanding }}</td>
+                    <td>
+                        <div *ngIf="constituent.index">
+                            <a [routerLink]="['/index', constituent.index?.id, 'view']" >{{ constituent.index?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/constituent', constituent.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/constituent', constituent.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(constituent)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

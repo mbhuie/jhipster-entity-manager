@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-index-heading" jhiTranslate="entityManagerApp.index.home.createOrEditLabel">Create or edit a Index</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.basketCurrency" for="field_basketCurrency">Basket Currency</label>
+                    <input type="text" class="form-control" name="basketCurrency" id="field_basketCurrency"
+                           formControlName="basketCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.asAtDate" for="field_asAtDate">As At Date</label>
+                    <div class="input-group">
+                        <input id="field_asAtDate" type="text" class="form-control" name="asAtDate" ngbDatepicker #asAtDateDp="ngbDatepicker" formControlName="asAtDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="asAtDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.basketInstrument" for="field_basketInstrument">Basket Instrument</label>
+                    <input type="text" class="form-control" name="basketInstrument" id="field_basketInstrument"
+                           formControlName="basketInstrument"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.basketInstrumentType" for="field_basketInstrumentType">Basket Instrument Type</label>
+                    <input type="text" class="form-control" name="basketInstrumentType" id="field_basketInstrumentType"
+                           formControlName="basketInstrumentType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.basketMinorUnits" for="field_basketMinorUnits">Basket Minor Units</label>
+                    <input type="number" class="form-control" name="basketMinorUnits" id="field_basketMinorUnits"
+                           formControlName="basketMinorUnits"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.basketName" for="field_basketName">Basket Name</label>
+                    <input type="text" class="form-control" name="basketName" id="field_basketName"
+                           formControlName="basketName"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.basketRic" for="field_basketRic">Basket Ric</label>
+                    <input type="text" class="form-control" name="basketRic" id="field_basketRic"
+                           formControlName="basketRic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.basketType" for="field_basketType">Basket Type</label>
+                    <input type="text" class="form-control" name="basketType" id="field_basketType"
+                           formControlName="basketType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.family" for="field_family">Family</label>
+                    <input type="text" class="form-control" name="family" id="field_family"
+                           formControlName="family"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.fundCurrency" for="field_fundCurrency">Fund Currency</label>
+                    <input type="text" class="form-control" name="fundCurrency" id="field_fundCurrency"
+                           formControlName="fundCurrency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.isEtf" for="field_isEtf">Is Etf</label>
+                    <input type="checkbox" class="form-control" name="isEtf" id="field_isEtf"
+                           formControlName="isEtf"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.index.isEtc" for="field_isEtc">Is Etc</label>
+                    <input type="checkbox" class="form-control" name="isEtc" id="field_isEtc"
+                           formControlName="isEtc"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

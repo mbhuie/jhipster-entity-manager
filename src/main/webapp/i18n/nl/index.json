@@ -1,0 +1,34 @@
+{
+  "entityManagerApp": {
+    "index": {
+      "home": {
+        "title": "Indices",
+        "createLabel": "Maak een nieuwe Index",
+        "createOrEditLabel": "Maak of wijzig een Index",
+        "notFound": "No Indices found"
+      },
+      "created": "A new Index is created with identifier {{ param }}",
+      "updated": "A Index is updated with identifier {{ param }}",
+      "deleted": "A Index is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Index {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Index"
+      },
+      "basketCurrency": "Basket Currency",
+      "asAtDate": "As At Date",
+      "basketInstrument": "Basket Instrument",
+      "basketInstrumentType": "Basket Instrument Type",
+      "basketMinorUnits": "Basket Minor Units",
+      "basketName": "Basket Name",
+      "basketRic": "Basket Ric",
+      "basketType": "Basket Type",
+      "family": "Family",
+      "fundCurrency": "Fund Currency",
+      "isEtf": "Is Etf",
+      "isEtc": "Is Etc",
+      "constituent": "Constituent"
+    }
+  }
+}

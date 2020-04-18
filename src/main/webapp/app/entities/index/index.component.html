@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="entityManagerApp.index.home.title">Indices</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-index" [routerLink]="['/index/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="entityManagerApp.index.home.createLabel">
+            Create a new Index
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="indices?.length === 0">
+        <span jhiTranslate="entityManagerApp.index.home.notFound">No indices found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="indices?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.basketCurrency">Basket Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.asAtDate">As At Date</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.basketInstrument">Basket Instrument</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.basketInstrumentType">Basket Instrument Type</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.basketMinorUnits">Basket Minor Units</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.basketName">Basket Name</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.basketRic">Basket Ric</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.basketType">Basket Type</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.family">Family</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.fundCurrency">Fund Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.isEtf">Is Etf</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.index.isEtc">Is Etc</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let index of indices ;trackBy: trackId">
+                    <td><a [routerLink]="['/index', index.id, 'view']">{{ index.id }}</a></td>
+                    <td>{{ index.basketCurrency }}</td>
+                    <td>{{ index.asAtDate | date:'mediumDate' }}</td>
+                    <td>{{ index.basketInstrument }}</td>
+                    <td>{{ index.basketInstrumentType }}</td>
+                    <td>{{ index.basketMinorUnits }}</td>
+                    <td>{{ index.basketName }}</td>
+                    <td>{{ index.basketRic }}</td>
+                    <td>{{ index.basketType }}</td>
+                    <td>{{ index.family }}</td>
+                    <td>{{ index.fundCurrency }}</td>
+                    <td>{{ index.isEtf }}</td>
+                    <td>{{ index.isEtc }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/index', index.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/index', index.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(index)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

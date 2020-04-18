@@ -1,0 +1,57 @@
+{
+    "name": "Constituent",
+    "fields": [
+        {
+            "fieldName": "ric",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isin",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sedol",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currency",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "issueType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "centerCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sharesOutstanding",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "index",
+            "otherEntityRelationshipName": "constituent",
+            "relationshipName": "index",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200418092500",
+    "entityTableName": "constituent",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

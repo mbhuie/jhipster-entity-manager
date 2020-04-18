@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-constituent-heading" jhiTranslate="entityManagerApp.constituent.home.createOrEditLabel">Create or edit a Constituent</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.ric" for="field_ric">Ric</label>
+                    <input type="text" class="form-control" name="ric" id="field_ric"
+                           formControlName="ric"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.isin" for="field_isin">Isin</label>
+                    <input type="text" class="form-control" name="isin" id="field_isin"
+                           formControlName="isin"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.sedol" for="field_sedol">Sedol</label>
+                    <input type="text" class="form-control" name="sedol" id="field_sedol"
+                           formControlName="sedol"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.currency" for="field_currency">Currency</label>
+                    <input type="text" class="form-control" name="currency" id="field_currency"
+                           formControlName="currency"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.issueType" for="field_issueType">Issue Type</label>
+                    <input type="text" class="form-control" name="issueType" id="field_issueType"
+                           formControlName="issueType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.mic" for="field_mic">Mic</label>
+                    <input type="text" class="form-control" name="mic" id="field_mic"
+                           formControlName="mic"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.centerCode" for="field_centerCode">Center Code</label>
+                    <input type="text" class="form-control" name="centerCode" id="field_centerCode"
+                           formControlName="centerCode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.sharesOutstanding" for="field_sharesOutstanding">Shares Outstanding</label>
+                    <input type="number" class="form-control" name="sharesOutstanding" id="field_sharesOutstanding"
+                           formControlName="sharesOutstanding"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="entityManagerApp.constituent.index" for="field_index">Index</label>
+                    <select class="form-control" id="field_index" name="index" formControlName="index">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="indexOption.id === editForm.get('index')!.value?.id ? editForm.get('index')!.value : indexOption" *ngFor="let indexOption of indices; trackBy: trackById">{{ indexOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

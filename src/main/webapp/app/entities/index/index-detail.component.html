@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="index">
+            <h2><span jhiTranslate="entityManagerApp.index.detail.title">Index</span> {{ index.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="entityManagerApp.index.basketCurrency">Basket Currency</span></dt>
+                <dd>
+                    <span>{{ index.basketCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.asAtDate">As At Date</span></dt>
+                <dd>
+                    <span>{{ index.asAtDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.basketInstrument">Basket Instrument</span></dt>
+                <dd>
+                    <span>{{ index.basketInstrument }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.basketInstrumentType">Basket Instrument Type</span></dt>
+                <dd>
+                    <span>{{ index.basketInstrumentType }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.basketMinorUnits">Basket Minor Units</span></dt>
+                <dd>
+                    <span>{{ index.basketMinorUnits }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.basketName">Basket Name</span></dt>
+                <dd>
+                    <span>{{ index.basketName }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.basketRic">Basket Ric</span></dt>
+                <dd>
+                    <span>{{ index.basketRic }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.basketType">Basket Type</span></dt>
+                <dd>
+                    <span>{{ index.basketType }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.family">Family</span></dt>
+                <dd>
+                    <span>{{ index.family }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.fundCurrency">Fund Currency</span></dt>
+                <dd>
+                    <span>{{ index.fundCurrency }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.isEtf">Is Etf</span></dt>
+                <dd>
+                    <span>{{ index.isEtf }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.index.isEtc">Is Etc</span></dt>
+                <dd>
+                    <span>{{ index.isEtc }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/index', index.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

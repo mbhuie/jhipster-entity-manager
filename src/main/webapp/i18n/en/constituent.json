@@ -1,0 +1,30 @@
+{
+  "entityManagerApp": {
+    "constituent": {
+      "home": {
+        "title": "Constituents",
+        "createLabel": "Create a new Constituent",
+        "createOrEditLabel": "Create or edit a Constituent",
+        "notFound": "No Constituents found"
+      },
+      "created": "A new Constituent is created with identifier {{ param }}",
+      "updated": "A Constituent is updated with identifier {{ param }}",
+      "deleted": "A Constituent is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Constituent {{ id }}?"
+      },
+      "detail": {
+        "title": "Constituent"
+      },
+      "ric": "Ric",
+      "isin": "Isin",
+      "sedol": "Sedol",
+      "currency": "Currency",
+      "issueType": "Issue Type",
+      "mic": "Mic",
+      "centerCode": "Center Code",
+      "sharesOutstanding": "Shares Outstanding",
+      "index": "Index"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="constituent">
+            <h2><span jhiTranslate="entityManagerApp.constituent.detail.title">Constituent</span> {{ constituent.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="entityManagerApp.constituent.ric">Ric</span></dt>
+                <dd>
+                    <span>{{ constituent.ric }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.isin">Isin</span></dt>
+                <dd>
+                    <span>{{ constituent.isin }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.sedol">Sedol</span></dt>
+                <dd>
+                    <span>{{ constituent.sedol }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.currency">Currency</span></dt>
+                <dd>
+                    <span>{{ constituent.currency }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.issueType">Issue Type</span></dt>
+                <dd>
+                    <span>{{ constituent.issueType }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.mic">Mic</span></dt>
+                <dd>
+                    <span>{{ constituent.mic }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.centerCode">Center Code</span></dt>
+                <dd>
+                    <span>{{ constituent.centerCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.sharesOutstanding">Shares Outstanding</span></dt>
+                <dd>
+                    <span>{{ constituent.sharesOutstanding }}</span>
+                </dd>
+                <dt><span jhiTranslate="entityManagerApp.constituent.index">Index</span></dt>
+                <dd>
+                    <div *ngIf="constituent.index">
+                        <a [routerLink]="['/index', constituent.index?.id, 'view']">{{ constituent.index?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/constituent', constituent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
