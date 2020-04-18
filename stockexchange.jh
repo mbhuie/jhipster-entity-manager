@@ -1,0 +1,15 @@
+entity Stock {
+    ric String
+    name String
+    mic String
+    lotSize Integer
+}
+
+entity Exchange {
+   mic String
+   name String
+}
+
+relationship OneToOne {
+   Exchange{mic} to Stock
+}
