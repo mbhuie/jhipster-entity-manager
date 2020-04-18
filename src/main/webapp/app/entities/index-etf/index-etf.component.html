@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="entityManagerApp.indexETF.home.title">Index ETFS</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-index-etf" [routerLink]="['/index-etf/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="entityManagerApp.indexETF.home.createLabel">
+            Create a new Index ETF
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="indexETFS?.length === 0">
+        <span jhiTranslate="entityManagerApp.indexETF.home.notFound">No indexETFS found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="indexETFS?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.basketCurrency">Basket Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.asAtDate">As At Date</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.basketInstrument">Basket Instrument</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.basketInstrumentType">Basket Instrument Type</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.basketMinorUnits">Basket Minor Units</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.basketName">Basket Name</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.basketRic">Basket Ric</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.basketType">Basket Type</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.family">Family</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.fundCurrency">Fund Currency</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.isEtf">Is Etf</span></th>
+                    <th scope="col" ><span jhiTranslate="entityManagerApp.indexETF.isEtc">Is Etc</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let indexETF of indexETFS ;trackBy: trackId">
+                    <td><a [routerLink]="['/index-etf', indexETF.id, 'view']">{{ indexETF.id }}</a></td>
+                    <td>{{ indexETF.basketCurrency }}</td>
+                    <td>{{ indexETF.asAtDate | date:'mediumDate' }}</td>
+                    <td>{{ indexETF.basketInstrument }}</td>
+                    <td>{{ indexETF.basketInstrumentType }}</td>
+                    <td>{{ indexETF.basketMinorUnits }}</td>
+                    <td>{{ indexETF.basketName }}</td>
+                    <td>{{ indexETF.basketRic }}</td>
+                    <td>{{ indexETF.basketType }}</td>
+                    <td>{{ indexETF.family }}</td>
+                    <td>{{ indexETF.fundCurrency }}</td>
+                    <td>{{ indexETF.isEtf }}</td>
+                    <td>{{ indexETF.isEtc }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/index-etf', indexETF.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/index-etf', indexETF.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(indexETF)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
